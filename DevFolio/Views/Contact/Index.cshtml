@@ -2,20 +2,22 @@
 @{
     Layout = null;
 }
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
-<div style="margin-left:100px; margin-right:100px; background-color:antiquewhite">
-    <h3>Mesaj Gönderme Sayfası</h3>
+<div style="margin-left:100px; margin-right:100px; background-color:aquamarine" class="container">
+    <h2 style="background-color:antiquewhite">Mesaj Gönderme Sayfası</h2>
+    <br />
     <label>Adınız Soyadınız</label>
-    <input type="text">
+    <input type="text" class="form-control">
     <br />
     <label>Mail Adresiniz</label>
-    <input type="email">
+    <input type="email" class="form-control">
     <br />
     <label>Mesaj Konusu</label>
-    <input type="text" />
+    <input type="text" class="form-control"/>
     <br />
     <label>Mesajınız</label>
-    <textarea rows="5"></textarea>
+    <textarea rows="5" class="form-control"></textarea>
     <br />
-    <button>Mesajı Gönder</button>
+    <button class="btn btn-warning">Mesajı Gönder</button>
 </div>
