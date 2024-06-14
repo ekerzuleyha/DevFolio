@@ -19,14 +19,14 @@
     <!--neyin içinde modelin içinde . Yukarda yazdığımız model içinde. küçük model çıkmıyor.yukardaki modelküçükle yazılan bizim dizinimizi getiriyor. büyük model ise bizim komple listemizi tutuyor.-->
     @foreach (var item in Model ) 
     {
-        <tr>
-            <!--item daki ıd yi getir.-->
-            <td>@item.SocialMediaID</td>
-            <td>@item.PlatformName</td>
-            <td>@item.Status</td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-success">Güncelle</a></td>
-        </tr>
+<tr>
+    <!--item daki ıd yi getir.-->
+    <td>@item.SocialMediaID</td>
+    <td>@item.PlatformName</td>
+    <td>@item.Status</td>
+    <td><a href="#" class="btn btn-danger">Sil</a></td>
+    <td><a href="#" class="btn btn-success">Güncelle</a></td>
+</tr>
     }
 </table>
 <a href="#" class="btn btn-info"> Yeni Sosyal Medya Girişi</a>

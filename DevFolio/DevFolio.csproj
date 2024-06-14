@@ -372,10 +372,6 @@
     <Content Include="Templates\sidebar-01\scss\bootstrap\_variables.scss" />
     <Content Include="Templates\sidebar-01\scss\style.scss" />
     <Content Include="Views\AdminLayout\Index.cshtml" />
-    <Content Include="Views\AdminLayout\HeadPartial.cshtml" />
-    <Content Include="Views\AdminLayout\SidebarPartial.cshtml" />
-    <Content Include="Views\AdminLayout\NavbarPartial.cshtml" />
-    <Content Include="Views\AdminLayout\ScriptPartial.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Service\ServiceList.cshtml" />
     <Content Include="Views\Project\CreateProject.cshtml" />
@@ -392,6 +388,10 @@
     <Content Include="Views\Statistic\Index.cshtml" />
     <Content Include="Views\Address\AddressList.cshtml" />
     <Content Include="Views\Address\CreateAddress.cshtml" />
+    <Content Include="Views\AdminLayout\HeadPartial.cshtml" />
+    <Content Include="Views\AdminLayout\SidebarPartial.cshtml" />
+    <Content Include="Views\AdminLayout\NavbarPartial.cshtml" />
+    <Content Include="Views\AdminLayout\ScriptPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

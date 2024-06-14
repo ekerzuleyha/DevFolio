@@ -13,7 +13,7 @@ namespace DevFolio.Controllers
 
         public ActionResult SkillList()
         {
-            //skill tablosundaki veriler bana listele sont-ra bana values ı döndür
+            //skill tablosundaki verileri bana listele sont-ra bana values ı döndür
             var values = db.TblSkill.ToList();
 
             return View(values);
@@ -21,6 +21,7 @@ namespace DevFolio.Controllers
 
         //yeni bir yetenek ekleme sayfası oluşturmak istiyorum.
         //köşeli parantez içinde eklenen ifadelerin ismi attribute olur
+        //benim bu metodumun görev yüklenicisi. yani;
         //httpget ile creatskille ne demek istiyoruz.veriyi sadece okuycak çağrılırken çalışacak yani normalde createskill sayfası ne zaman cağrılmış oluyor programda ilk olarak (ekleme sayfası çağrılcağı zaman ) yani sayfa yüklendiği anda.sen sayfa yüklendiği zaman yapacağın tek şey o sayfayı bana getirmek.sayfa yüklendiği zaman bana sadece o sayfayı getir.1. create skill sayfamızı bize yükleyecek 2. create skill ekleme yapacak. 
         
         [HttpGet]
@@ -29,6 +30,8 @@ namespace DevFolio.Controllers
             return View();
 
         }
+
+        //aynı metot butona tıklayınca ne yapacak.
         //ekleme işlemi yapabilmek için bizim buraya bi parametre göndermemiz gerekiyor.Bizim göndereceğimiz parametre tblskill sınıfından türeyen bir p parametresi olacak 
         
         
@@ -49,7 +52,7 @@ namespace DevFolio.Controllers
         //silme işlemini id ye göre yapıcaz.
         public ActionResult DeleteSkill(int id) 
         {
-            var value = db.TblSkill.Find(id); //find metodu id ye göre değer bulmamızı sağlayan                                           metot.göndermiş olduğumuz bütün satırı ele alır.
+            var value = db.TblSkill.Find(id); //find metodu id ye göre değer bulmamızı sağlayan                                           metot.göndermiş olduğumuz id ye ait bütün satırı ele alır.
             db.TblSkill.Remove(value);//tbl skill içerisinden value değişkenindeki değeri kaldır. value                              komple o satırı tutar.
 
             db.SaveChanges();
@@ -74,6 +77,7 @@ namespace DevFolio.Controllers
         [HttpPost]
         public ActionResult UpdateSkill(TblSkill p) 
         {
+            //parametreden gelen skillıd ye göre değeri bul.
             var value = db.TblSkill.Find(p.SkillID);
             value.SkillTitle = p.SkillTitle;
             value.SkillValue = p.SkillValue;

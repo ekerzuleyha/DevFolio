@@ -33,6 +33,8 @@ namespace DevFolio.Controllers
 
         }
 
+
+        //int x verilir mi ?
         public ActionResult DeleteTestimonial(int id) 
         {
             var value = db.TblTestimonial.Find(id);
