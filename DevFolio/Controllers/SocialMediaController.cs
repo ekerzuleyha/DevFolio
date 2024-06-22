@@ -25,5 +25,48 @@ namespace DevFolio.Controllers
             return View(values);
             //sayfa yüklendiğinde sen bu values un içindekileri de bu sayfanın içine taşı diyoruz.
         }
+
+        
+        public ActionResult CreateMediaView(TblSocialMedia p)
+        {
+            return View();
+        }
+
+
+        public ActionResult CreateMedia(TblSocialMedia p)
+        {
+            db.TblSocialMedia.Add(p);
+            db.SaveChanges();
+            return RedirectToAction("SocialMediaList");
+
+        }
+
+        public ActionResult DeleteMedia(int id)
+        {
+            var value = db.TblSocialMedia.Find(id);
+            db.TblSocialMedia.Remove(value);
+            db.SaveChanges();
+            return RedirectToAction("SocialMediaList");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateMediaView(int id)
+        {
+            var value = db.TblSocialMedia.Find(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateMediaView(TblSocialMedia p)
+        {
+            var value = db.TblSocialMedia.Find(p.SocialMediaID);
+            value.PlatformName = p.PlatformName;
+            value.IconUrl = p.IconUrl;
+            value.RedirectUrl = p.RedirectUrl;
+            value.Status = p.Status;
+            db.SaveChanges();
+            return RedirectToAction("SocialMediaList");
+
+        }
     }
 }

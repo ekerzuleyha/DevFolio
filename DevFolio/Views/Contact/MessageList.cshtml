@@ -1,28 +1,49 @@
-﻿
+﻿@model List<DevFolio.Models.TblContact>
 @{
-    Layout = null;
+    ViewBag.Title = "MessageList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-<br />
-<div class="container">
-    <table class="table table-bordered">
-        <tr>
-            <th>Mesaj No</th>
-            <th>Gönderen</th>
-            <th>Konu</th>
-            <th>Mesajı Aç</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Murat Sağlam</td>
-            <td>Teşekkür</td>
-            <td><a href="#" class="btn btn-warning">Mesajı Aç</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Kemal Kibar</td>
-            <td>Şikayet</td>
-            <td><a href="#" class="btn btn-warning">Mesajı Aç</a></td>
-        </tr>
-    </table>
-</div>
+
+<h2>Mesaj Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        @*<th>Email</th>*@
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Mesajı Aç</th>
+    </tr>
+
+   @foreach (var item in Model)
+   {
+       string okunduBilgisi = "";
+       string renk = "";
+
+       if (item.IsRead==true)
+       {
+           okunduBilgisi = "Okundu";
+           renk = "alert-success";
+       }
+       else
+       {
+           okunduBilgisi = "Okunmadı";
+           renk = "alert-danger";
+       }
+<tr> 
+    <td>@item.ContactID</td>
+    <td>@item.NameSurname</td>
+    @*<td>@item.Email</td>*@
+    <td>@item.Subject</td>
+    <td>@(((DateTime)item.SendMessageDate).ToString("dd.MM.yyyy"))</td>
+    
+    <td><span class="@renk" >@okunduBilgisi</span></td>
+    <td><a href="/Contact/DeleteMessage/@item.ContactID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Contact/ReadMessage/@item.ContactID" class="btn btn-success">Mesajı Aç</a></td>
+</tr>
+   }
+</table>
+

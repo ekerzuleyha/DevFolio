@@ -1,0 +1,19 @@
+﻿@model DevFolio.Models.TblAdmin
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Admin Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x=>x.UserName, new { @class="form-control"})
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(x=>x.Password, new { @class="form-control"})
+    <br />
+
+    <button class="btn btn-info" >Admin Kaydet</button>
+</form>
+

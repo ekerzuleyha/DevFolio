@@ -5,8 +5,14 @@
 }
 
 <h2>Hakkımda Bilgisi Güncelle</h2>
-<label>Hakkımda</label>
-<input type="text" name="Description" value="@Model.Description" class="form-control"/>
 <br />
-<button class="btn btn-info">Hakkımda Bilgisini Güncelle</button>
+<form method="post">
+    <label>Hakkımda Id</label>
+    @Html.TextBoxFor(x => x.AboutID, new { @class = "form-control", @readonly = "true" })
+    <br />
+    <label>Hakkımda</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
 
+    <br />
+    <button class="btn btn-info">Hakkımda Bilgisini Güncelle</button>
+</form>

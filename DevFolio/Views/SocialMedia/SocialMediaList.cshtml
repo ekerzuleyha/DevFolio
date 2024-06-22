@@ -1,4 +1,4 @@
-﻿<!--verileri listeleyebilmek için bu verilerin ana kaynağını yukarıda tanımlamamız gerekiyor.-->>
+﻿<!--verileri listeleyebilmek için bu verilerin ana kaynağını yukarıda tanımlamamız gerekiyor.-->
 <!--sen modelden bir veri çekeceksin , peki bu verinin türü ne olacak, türü list çünkü biz bir liste çekicez, sen bunun içine bunu getiriceksin ,devfolio projemizin içinde yer alan ,modelin içinde yer alan,sosyal medya tblosunu getiriyor olacaksın -->
 @model List<DevFolio.Models.TblSocialMedia>
 @{
@@ -10,25 +10,41 @@
 <table class="table table-bordered">
     <tr>
         <th>Id</th>
-        <th>Başlık</th>
+        <th>Platform Adı</th>
+        <th>İkon Url</th>
+        <th>Adres Url</th>
         <th>Durum</th>
         <th>Sil</th>
         <th>Güncelle</th>
     </tr>
     <!--verilerin dinamik olarak gelebilmesi için bizim burda bi döngüye ihtiyacımız var.burda for each kullanmamız daha sağlıklı olmalı. bu for each i kullanmak için "et" sembölünü kullanmamız gerekir. Razor syntax : html içine c# kodu yazmama olanak sağlayan yapı.bu yapı da "et" sembolüyle sağlanıyor-->
     <!--neyin içinde modelin içinde . Yukarda yazdığımız model içinde. küçük model çıkmıyor.yukardaki modelküçükle yazılan bizim dizinimizi getiriyor. büyük model ise bizim komple listemizi tutuyor.-->
-    @foreach (var item in Model ) 
+    @foreach (var item in Model )
     {
+
+        string status = "";
+        if (@item.Status==true)
+        {
+            status = "alert alert-success";
+        }
+        else
+        {
+            status = "alert alert-danger";
+        }
+
 <tr>
     <!--item daki ıd yi getir.-->
     <td>@item.SocialMediaID</td>
     <td>@item.PlatformName</td>
-    <td>@item.Status</td>
-    <td><a href="#" class="btn btn-danger">Sil</a></td>
-    <td><a href="#" class="btn btn-success">Güncelle</a></td>
+    <td>@item.IconUrl</td>
+    <td>@item.RedirectUrl</td>
+    @*<td>@item.Status</td>*@
+    <td><span class="@status">@item.Status</span></td>
+    <td><a href="/SocialMedia/DeleteMedia/@item.SocialMediaID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/SocialMedia/UpdateMediaView/@item.SocialMediaID" class="btn btn-success">Güncelle</a></td>
 </tr>
     }
 </table>
-<a href="#" class="btn btn-info"> Yeni Sosyal Medya Girişi</a>
+<a href="/SocialMedia/CreateMediaView/" class="btn btn-info"> Yeni Sosyal Medya Girişi</a>
 
 

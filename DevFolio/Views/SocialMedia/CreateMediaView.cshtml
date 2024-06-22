@@ -1,0 +1,31 @@
+﻿@model DevFolio.Models.TblSocialMedia
+@{
+    ViewBag.Title = "CreateMediaView";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Yeni Sosyal Medya Ekleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("CreateMedia", "SocialMedia", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Sosyal Medya Ad</label>
+        @Html.TextBoxFor(m => m.PlatformName, new { @class = "form-control" })
+        <br />
+        <label>İkon Url</label>
+        @Html.TextBoxFor(m => m.IconUrl, new { @class = "form-control" })
+        <br />
+        <label>Adres Url</label>
+        @Html.TextBoxFor(m => m.RedirectUrl, new { @class = "form-control" })
+        <br />
+        <label>Durum</label>
+        @Html.TextBoxFor(m => m.Status, new { @class = "form-control" })
+        <br />
+
+
+    </div>
+
+    <div><button class="btn btn-info">Sosyal Medya Ekle</button></div>
+}

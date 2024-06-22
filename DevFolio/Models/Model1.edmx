@@ -136,7 +136,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetHighestSkillValue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GetLastSkillTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetLowestSkillValue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbDevFolioModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
@@ -312,6 +314,8 @@
             <End Role="TblProject" EntitySet="TblProject" />
           </AssociationSet>
           <FunctionImport Name="GetLastSkillTitle" ReturnType="Collection(String)" />
+          <FunctionImport Name="GetHighestSkillValue" ReturnType="Collection(String)" />
+          <FunctionImport Name="GetLowestSkillValue" ReturnType="Collection(String)" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -452,6 +456,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GetLastSkillTitle" FunctionName="DbDevFolioModel.Store.GetLastSkillTitle" />
+          <FunctionImportMapping FunctionImportName="GetHighestSkillValue" FunctionName="DbDevFolioModel.Store.GetHighestSkillValue" />
+          <FunctionImportMapping FunctionImportName="GetLowestSkillValue" FunctionName="DbDevFolioModel.Store.GetLowestSkillValue" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

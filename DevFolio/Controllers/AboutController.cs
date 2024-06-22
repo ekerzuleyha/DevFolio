@@ -48,6 +48,15 @@ namespace DevFolio.Controllers
             var value = db.TblAbout.Find(id);
             return View(value);
         }
-      
+
+        [HttpPost]
+        public ActionResult UpdateAbout(TblAbout p)
+        {
+            var value = db.TblAbout.Find(p.AboutID);
+            value.Description = p.Description;
+            db.SaveChanges();
+
+            return RedirectToAction("AboutList");
+        }
     }
 }

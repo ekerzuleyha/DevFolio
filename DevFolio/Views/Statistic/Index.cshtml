@@ -3,17 +3,20 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<h2>İstatistikler Sayfası</h2>
+<br />
 
-<div class="alert alert-danger" >Kategori sayısı: @ViewBag.categoryCount</div>
-
-<div class="alert alert-info" >Proje sayısı: @ViewBag.projectCount</div>
-
+<div class="alert alert-danger">Kategori sayısı: @ViewBag.categoryCount</div>
+<div class="alert alert-primary">Proje sayısı: @ViewBag.projectCount</div>
 <div class="alert alert-success">Yetenek sayısı: @ViewBag.skillCount</div>
+<div class="alert alert-dark">Ortalama Yetenek Değeri: @ViewBag.skillAvgValue</div>
+<div class="alert alert-warning">Eklenen Son Yetenek Adı: @ViewBag.lastSkillTitleName</div>
+<div class="alert alert-success">En Yüksek Değerli Yetenek: @ViewBag.highestSkillValue</div>
+<div class="alert alert-primary">En Düşük Değerli Yetenek: @ViewBag.lowestSkillValue</div>
+<div class="alert alert-danger">Asp.Net Core Proje Sayısı: @ViewBag.coreCategoryProjectCount</div>
+<div class="alert alert-dark">Flutter Proje Sayısı: @ViewBag.flutterCategoryProjectCount</div>
+ 
 
-<div class="alert alert-secondary">Ortalama Yetenek Puanı: @ViewBag.skillAvgValue</div>
 
-<div class="alert alert-warning">Son Eklenen Yetenek: @ViewBag.lastSkillTitleName</div>
-
-<div class="alert alert-primary">Asp.Net Core Proje Sayısı: @ViewBag.coreCategoryProjectCount</div>
 
 

@@ -39,5 +39,25 @@ namespace DevFolio.Controllers
             return RedirectToAction("AddressList");
 
         }
+
+        [HttpGet]
+        public ActionResult UpdateAddess(int id)
+        {
+            var value = db.TblAddress.Find(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAddess(TblAddress p)
+        {
+            var value = db.TblAddress.Find(p.AddressID);
+            value.Description = p.Description;
+            value.Email = p.Email;
+            value.Location = p.Location;
+            value.PhoneNumber = p.PhoneNumber;
+            db.SaveChanges();
+            return RedirectToAction("AddressList");
+
+        }
     }
 }

@@ -13,13 +13,27 @@ namespace DevFolio.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.categoryCount = db.TblCategory.Count();
+            //entity frameworkde  count () metodu bir tablodaki kayıt sayısını getirir.
+            ViewBag.categoryCount= db.TblCategory.Count();
             ViewBag.projectCount = db.TblProject.Count();
             ViewBag.skillCount = db.TblSkill.Count();
+            //ortalama yetenek puanı
             ViewBag.skillAvgValue = db.TblSkill.Average(x=>x.SkillValue);
-            //eklenen son başlığın adı
+            //eklenen son başlık adı
             ViewBag.lastSkillTitleName = db.GetLastSkillTitle().FirstOrDefault();
-            @ViewBag.coreCategoryProjectCount = db.TblProject.Where(x => x.ProjectCategory == 1).Count();
+            //EN YÜKSEK DEĞERE SAHİP OLUNAN YETENEK 
+            ViewBag.highestSkillValue = db.GetHighestSkillValue().FirstOrDefault();
+            //EN DÜŞÜK DEĞERE SAHİP OLUNAN YETENEK 
+            ViewBag.lowestSkillValue = db.GetLowestSkillValue().FirstOrDefault();
+            //proje katagorisine göre veri getirme
+            ViewBag.coreCategoryProjectCount = db.TblProject.Where(x=>x.ProjectCategory==1).Count();
+            //flutter kategorsine bağlı projeler
+            ViewBag.flutterCategoryProjectCount = db.TblProject.Where(x=>x.ProjectCategory==2).Count();
+
+
+
+
+
 
 
 
