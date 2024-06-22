@@ -231,6 +231,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="cv\Züleyha_Eker_CV.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -262,6 +263,7 @@
     <Content Include="Templates\devfolio-master\img\post-1.jpg" />
     <Content Include="Templates\devfolio-master\img\post-2.jpg" />
     <Content Include="Templates\devfolio-master\img\post-3.jpg" />
+    <Content Include="Templates\devfolio-master\img\resim.jpeg" />
     <Content Include="Templates\devfolio-master\img\testimonial-2.jpg" />
     <Content Include="Templates\devfolio-master\img\testimonial-4.jpg" />
     <Content Include="Templates\devfolio-master\img\work-1.jpg" />
@@ -322,6 +324,7 @@
     <Content Include="Templates\sidebar-01\css\bootstrap\_media.css" />
     <Content Include="Templates\sidebar-01\css\style.css" />
     <Content Include="Templates\sidebar-01\images\logo.jpg" />
+    <Content Include="Templates\sidebar-01\images\resim.jpeg" />
     <Content Include="Templates\sidebar-01\index.html" />
     <Content Include="Templates\sidebar-01\js\bootstrap.min.js" />
     <Content Include="Templates\sidebar-01\js\jquery.min.js" />
@@ -500,6 +503,14 @@
     <Content Include="Views\Service\UpdateService.cshtml" />
     <Content Include="Views\SocialMedia\CreateMediaView.cshtml" />
     <Content Include="Views\SocialMedia\UpdateMediaView.cshtml" />
+    <Content Include="Views\Default\PartialAbout.cshtml" />
+    <Content Include="Views\Default\PartialService.cshtml" />
+    <Content Include="Views\Default\PartialStatistic.cshtml" />
+    <Content Include="Views\Default\PartialPortfolio.cshtml" />
+    <Content Include="Views\Default\PartialReferans.cshtml" />
+    <Content Include="Views\Default\PartialContact.cshtml" />
+    <Content Include="Views\Default\PartialAddress.cshtml" />
+    <Content Include="Views\Default\PartialMedia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

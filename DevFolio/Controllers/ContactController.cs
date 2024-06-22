@@ -22,12 +22,14 @@ namespace DevFolio.Controllers
         [HttpPost]
         public ActionResult SendMessage(TblContact p)
         {
-            var value = db.TblContact.Add(p);
-            value.SendMessageDate = DateTime.Now;
-            value.IsRead = false;
+            db.TblContact.Add(p);
+            p.SendMessageDate = DateTime.Now;
+            p.IsRead = false;
             db.SaveChanges();
-            return View("Index", "Default");
+            return RedirectToAction("Index", "Default");
         }
+
+
 
         [HttpGet]
         public ActionResult ReadMessage(int id)

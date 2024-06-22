@@ -29,7 +29,7 @@ namespace DevFolio.Controllers
             ViewBag.coreCategoryProjectCount = db.TblProject.Where(x=>x.ProjectCategory==1).Count();
             //flutter kategorsine bağlı projeler
             ViewBag.flutterCategoryProjectCount = db.TblProject.Where(x=>x.ProjectCategory==2).Count();
-
+            ViewBag.truestatusmedia = db.TblSocialMedia.Where(x => x.Status == true).Count();
 
 
 

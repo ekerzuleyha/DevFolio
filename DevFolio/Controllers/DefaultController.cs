@@ -43,5 +43,59 @@ namespace DevFolio.Controllers
             var values = db.TblSkill.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult PartialAbout()
+        {
+            var values = db.TblAbout.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialService()
+        {
+            var values = db.TblService.ToList();
+            return PartialView(values);
+        }
+
+         public PartialViewResult PartialStatistic()
+        {
+            ViewBag.projectcount = db.TblProject.Count();
+            ViewBag.servicecount = db.TblService.Count();
+            ViewBag.categorycount = db.TblCategory.Count();
+            ViewBag.skillcount = db.TblSkill.Count();
+            return PartialView();
+        }  
+
+
+        public PartialViewResult PartialPortfolio()
+        {
+            var values = db.TblProject.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialReferans()
+        {
+            var values = db.TblTestimonial.ToList();
+            return PartialView(values);
+        }
+
+
+        public PartialViewResult PartialContact()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialAddress()
+        {
+            var values = db.TblAddress.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialMedia()
+        {
+            var values = db.TblSocialMedia.ToList();
+            return PartialView(values);
+        }
+
+         
     }
 }
